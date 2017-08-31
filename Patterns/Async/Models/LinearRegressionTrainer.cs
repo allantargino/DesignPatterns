@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace State.Models
 {
-    public class LinearRegressionTrainer : ITrainerAsync<LinearRegressionModel>
+    public class LinearRegressionTrainer : ITrainerAsync<CartesianInput, LinearRegressionModel>
     {
         int _iterations;
 
@@ -14,24 +14,13 @@ namespace State.Models
             _iterations = iterations;
         }
 
-        public void Train(IEnumerable<IInput> inputs)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Cancel()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<LinearRegressionModel> TrainAsync(List<IInput> inputs)
+        public async Task<LinearRegressionModel> TrainAsync(CartesianInput inputs)
         {
             //Apply parameters
             //Process input and create model
 
-            var numbers = inputs;
-            var p0 = (CartesianPoint)numbers[0].Input;
-            var p1 = (CartesianPoint)numbers[1].Input;
+            var p0 = inputs.P1;
+            var p1 = inputs.P2;
 
             var a = p0.Y;
             var b = (p1.Y - p0.Y) / (p1.X - p0.X);
@@ -46,9 +35,8 @@ namespace State.Models
             };
         }
 
-        public Task CancelAsync()
+        public void Cancel()
         {
-            return Task.FromResult(true);
         }
     }
 }

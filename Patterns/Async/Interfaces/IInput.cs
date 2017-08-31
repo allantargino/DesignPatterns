@@ -6,6 +6,5 @@ namespace State.Interfaces
 {
     public interface IInput
     {
-        object Input { get; }
     }
 }

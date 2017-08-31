@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace State.Interfaces
 {
-    public interface ITrainerAsync<M>
+    public interface ITrainerAsync<I,M>
     {
-        Task<M> TrainAsync(List<IInput> inputs);
-        Task CancelAsync();
+        Task<M> TrainAsync(I inputs);
+        void Cancel();
     }
 }
