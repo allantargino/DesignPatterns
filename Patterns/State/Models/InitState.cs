@@ -23,6 +23,7 @@ namespace State.Models
         {
             Task.Run(() =>
             {
+                //TODO: Implement CancellationToken with Cancel()
                 M model = _algorithm(inputs);
                 _callback(model);
             });
