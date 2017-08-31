@@ -1,49 +1,54 @@
 ﻿using State.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace State.Models
 {
-    public class LinearRegressionTrainer : ITrainer<LinearRegressionModel>
+    public class LinearRegressionTrainer : ITrainer<LinearRegressionModel>, ITrainerAsync<LinearRegressionModel>
     {
-        private ITrainerState<LinearRegressionModel> _state;
+        int _iterations;
 
-        public LinearRegressionTrainer(int iterations, Action<LinearRegressionModel> callback)
+        public LinearRegressionTrainer(int iterations)
         {
-            var algorithm = new Func<IEnumerable<IInput>, LinearRegressionModel>(
-                (_inputs) =>
-                {
-                    //Apply parameters
-                    //Process input and create model
-
-                    var numbers = (List<CartesianInput>)_inputs;
-                    var p0 = (CartesianPoint) numbers[0].Input;
-                    var p1 = (CartesianPoint) numbers[1].Input;
-
-                    var a = p0.Y;
-                    var b = (p1.Y - p0.Y) / (p1.X - p0.X);
-
-                    return new LinearRegressionModel()
-                    {
-                        LinearParameters = new List<float>()
-                        {
-                            a,
-                            b
-                        }
-                    };
-                });
-
-            _state = new InitState<LinearRegressionModel>(algorithm, callback);
+            _iterations = iterations;
         }
 
         public void Train(IEnumerable<IInput> inputs)
         {
-            _state = _state.Train(inputs);
+            throw new NotImplementedException();
         }
 
         public void Cancel()
         {
-            _state = _state.Cancel();
+            throw new NotImplementedException();
+        }
+
+        public async Task<LinearRegressionModel> TrainAsync(List<IInput> inputs)
+        {
+            //Apply parameters
+            //Process input and create model
+
+            var numbers = inputs;
+            var p0 = (CartesianPoint)numbers[0].Input;
+            var p1 = (CartesianPoint)numbers[1].Input;
+
+            var a = p0.Y;
+            var b = (p1.Y - p0.Y) / (p1.X - p0.X);
+
+            return new LinearRegressionModel()
+            {
+                LinearParameters = new List<float>()
+                        {
+                            a,
+                            b
+                        }
+            };
+        }
+
+        public Task CancelAsync()
+        {
+            return Task.FromResult(true);
         }
     }
 }
