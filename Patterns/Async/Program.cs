@@ -19,9 +19,9 @@ namespace State
                 new CartesianInput(50, 25),
                 new CartesianInput(100, 100)
             };
-            var parameters = new IteractionParameter(5);
+            int iterations = 5;
 
-            var trainer = new LinearRegressionTrainer(parameters, Callback);
+            var trainer = new LinearRegressionTrainer(iterations, Callback);
             trainer.Train(inputs);
 
             Console.ReadLine();

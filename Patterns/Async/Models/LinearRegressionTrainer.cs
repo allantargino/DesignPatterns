@@ -8,7 +8,7 @@ namespace State.Models
     {
         private ITrainerState<LinearRegressionModel> _state;
 
-        public LinearRegressionTrainer(IModelParameters parameters, Action<LinearRegressionModel> callback)
+        public LinearRegressionTrainer(int iterations, Action<LinearRegressionModel> callback)
         {
             var algorithm = new Func<IEnumerable<IInput>, LinearRegressionModel>(
                 (_inputs) =>
