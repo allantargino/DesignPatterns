@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace State.Models
 {
-    public class LinearRegressionTrainer : ITrainer<LinearRegressionModel>, ITrainerAsync<LinearRegressionModel>
+    public class LinearRegressionTrainer : ITrainerAsync<LinearRegressionModel>
     {
         int _iterations;
 
