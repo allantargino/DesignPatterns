@@ -26,12 +26,23 @@ namespace Composite.Models
                 e.Work();
         }
 
-        public void AddDirectEmployee(IEmployee employee)
+        public void Add(IEmployee employee)
         {
             if (employee == null)
                 throw new ArgumentNullException(nameof(employee));
 
             _employees.Add(employee);
         }
+
+        public void Remove(IEmployee employee)
+        {
+            if (employee == null)
+                throw new ArgumentNullException(nameof(employee));
+
+            _employees.Remove(employee);
+        }
+
+        public IEnumerable<IEmployee> GetChild() => _employees;
+
     }
 }
