@@ -33,7 +33,7 @@ namespace State.Models
                     };
                 });
 
-            _state = new InitState<LinearRegressionModel>(algorithm, callback);
+            _state = new InitializedState<LinearRegressionModel>(algorithm, callback);
         }
 
         public void Train(IEnumerable<IInput> inputs)

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace State.Models
 {
-    public class CancelState<M> : ITrainerState<M>
+    public class CanceledState<M> : ITrainerState<M>
     {
         private Func<IEnumerable<IInput>, M> _algorithm;
         private Action<M> _callback;
 
-        public CancelState(Func<IEnumerable<IInput>, M> algorithm, Action<M> callback)
+        public CanceledState(Func<IEnumerable<IInput>, M> algorithm, Action<M> callback)
         {
             _algorithm = algorithm;
             _callback = callback;
         }
 
-        public ITrainerState<M> Init(Func<IEnumerable<IInput>, M> algorithm, Action<M> callback) => new InitState<M>(algorithm, callback);
+        public ITrainerState<M> Init(Func<IEnumerable<IInput>, M> algorithm, Action<M> callback) => new InitializedState<M>(algorithm, callback);
 
         public ITrainerState<M> Train(IEnumerable<IInput> inputs)
         {

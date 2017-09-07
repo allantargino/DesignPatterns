@@ -7,17 +7,17 @@ namespace State.Models
 {
     public class CartesianInput : IInput
     {
-        CartesianPoint point;
+        CartesianPoint _point;
 
         public CartesianInput(float x, float y)
         {
-            point = new CartesianPoint()
+            _point = new CartesianPoint()
             {
                 X = x,
                 Y = y
             };
         }
 
-        public object Input { get => point; }
+        public object Input { get => _point; }
     }
 }

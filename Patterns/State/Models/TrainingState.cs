@@ -19,6 +19,6 @@ namespace State.Models
 
         public ITrainerState<M> Train(IEnumerable<IInput> inputs) => this;
 
-        public ITrainerState<M> Cancel() => new CancelState<M>(_algorithm, _callback);
+        public ITrainerState<M> Cancel() => new CanceledState<M>(_algorithm, _callback);
     }
 }
