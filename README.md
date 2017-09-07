@@ -1,13 +1,13 @@
 # DesignPatterns
 My studies on design patterns. If you see something wrong, please, help me to learn it :)
 
+Behavioral Patterns
+* [x] State
+
 Creational Patterns
-* [x] Factory Method
 * [x] Singleton
 
 Structural Patterns
+* [x] Composite
 * [ ] Facade
-
-Behavioral Patterns
-
-* [x] State
+* [x] Method Template
