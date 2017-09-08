@@ -5,21 +5,25 @@ using System.Text;
 
 namespace MethodTemplate.Models
 {
-    class Template<Method> : ITemplate
-        where Method:IMethods
+    abstract class Template : ITemplate
     {
-        public IMethods Methods { get; }
-
-        public Template(Method method)
-        {
-            Methods = method;
-        }
-
         public void Perform()
         {
-            Methods.Connect();
-            Methods.Get();
-            Methods.Close();
+            Connect();
+            Get();
+            Close();
+        }
+
+        public virtual void Connect()
+        {
+            Console.WriteLine("Connecting...");
+        }
+
+        public abstract void Get();
+
+        public virtual void Close()
+        {
+            Console.WriteLine("Closing...");
         }
     }
 }

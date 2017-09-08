@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MethodTemplate.Interfaces
+namespace Strategy.Interfaces
 {
     interface ITemplate
     {
-        void Perform();
+        IAlgorithm Algorithm { get; }
+        void Perform(int x, int y);
     }
 }

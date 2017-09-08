@@ -7,9 +7,9 @@ namespace MethodTemplate
     {
         static void Main(string[] args)
         {
-            new Template<MethodsA>(new MethodsA()).Perform();
-            new Template<MethodsB>(new MethodsB()).Perform();
-
+            new MethodsA().Perform();
+            Console.WriteLine();
+            new MethodsB().Perform();
             Console.ReadLine();
         }
     }

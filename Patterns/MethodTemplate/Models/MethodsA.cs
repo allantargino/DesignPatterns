@@ -5,19 +5,9 @@ using System.Text;
 
 namespace MethodTemplate.Models
 {
-    class MethodsA : IMethods
+    class MethodsA : Template
     {
-        public void Close()
-        {
-            Console.WriteLine("Closing A...");
-        }
-
-        public void Connect()
-        {
-            Console.WriteLine("Connecting A...");
-        }
-
-        public void Get()
+        public override void Get()
         {
             Console.WriteLine("Getting A...");
         }

@@ -11,3 +11,4 @@ Structural Patterns
 * [x] Composite
 * [ ] Facade
 * [x] Method Template
+* [x] Strategy
