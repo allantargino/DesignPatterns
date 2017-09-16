@@ -1,5 +1,5 @@
 # DesignPatterns
-My studies on design patterns. If you see something wrong, please, help me to learn it :)
+My studies of design patterns in C#. If you see something wrong, please, help me to learn it :)
 
 Behavioral Patterns
 * [x] [State](./Patterns/State)
