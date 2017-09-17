@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Singleton.Models
 {
-    public class Singleton<T> where T : class
+    public sealed class Singleton<T> where T : class
     {
         private static T _type;
 

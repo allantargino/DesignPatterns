@@ -34,6 +34,8 @@ namespace Singleton
             foreach (int num in l2)
                 Console.WriteLine(num);
 
+            var test = SingletonLazy<Person>.Instance;
+
             Console.ReadLine();
         }
     }
