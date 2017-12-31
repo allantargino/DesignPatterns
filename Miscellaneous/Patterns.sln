@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NullObject", "NullObject\NullObject.csproj", "{B58D3715-F47E-45CD-81D4-6A931E8EF8D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionalObject", "OptionalObject\OptionalObject.csproj", "{EDCA3F4C-DABB-45E9-9A4D-0B7C9CC4A945}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionalObject", "OptionalObject\OptionalObject.csproj", "{EDCA3F4C-DABB-45E9-9A4D-0B7C9CC4A945}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvoidSwitch", "AvoidSwitch\AvoidSwitch.csproj", "{A0A77293-D09A-4492-9748-475CDA71B387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EDCA3F4C-DABB-45E9-9A4D-0B7C9CC4A945}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDCA3F4C-DABB-45E9-9A4D-0B7C9CC4A945}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDCA3F4C-DABB-45E9-9A4D-0B7C9CC4A945}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0A77293-D09A-4492-9748-475CDA71B387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0A77293-D09A-4492-9748-475CDA71B387}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0A77293-D09A-4492-9748-475CDA71B387}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0A77293-D09A-4492-9748-475CDA71B387}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
